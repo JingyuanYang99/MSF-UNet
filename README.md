@@ -24,28 +24,6 @@ The model outputs zonal (u) and meridional (v) wind components at 37 pressure le
 | Dropsonde u-wind RMSE / R | 2.75 m s⁻¹ / 0.92 |
 | Dropsonde v-wind RMSE / R | 2.91 m s⁻¹ / 0.84 |
 
-## Code Structure
-
-```
-.
-├── unet_model/
-│   ├── predict.py             # Inference pipeline for single samples
-│   └── analyze_levels.py      # Per-level RMSE/MAE/Bias analysis on test set
-│
-├── 15min_wind/
-│   └── predict_15min_paper.py # 15-min squall-line case study (Figure 3 in paper)
-│                               #   Generates AGRI BT + retrieved 850 hPa wind composites
-│
-└── plot_code/                 # Visualization scripts
-    ├── plot_3D_wind.py        # 3D wind field visualization
-    ├── plot_ERA5.py           # ERA5 reference wind plotting
-    ├── plot_ERA5_uvw.py       # ERA5 u/v/w component plotting
-    ├── plot_GIIRS_BT.py       # GIIRS brightness temperature plotting
-    ├── plot_GIIRS_R.py        # GIIRS radiance plotting
-    ├── plot_predict_wind.py   # Predicted wind field visualization
-    ├── plot_npz.py            # NPZ data inspection
-    └── plot_gif.py            # Animation generation
-```
 
 ## Environment
 
@@ -64,25 +42,22 @@ pip install torch numpy h5py xarray pandas matplotlib scipy tensorboard
 ### 1. Prediction (Inference)
 
 ```bash
-cd unet_model/
 python predict.py
 ```
 
-The trained model checkpoint is loaded from `unet_model/checkpoint/unet_best.pth`.
+The trained model checkpoint is loaded from `checkpoint/unet_best.pth`.
 
 ### 2. Per-Level Error Analysis
 
 ```bash
-cd unet_model/
 python analyze_levels.py
 ```
 
 Outputs per-level RMSE, MAE, and Bias at all 37 pressure levels (CSV + figure).
 
-### 3. 15-min Squall-Line Case Study (Figure 3 in paper)
+### 3. 15-min Squall-Line Case Study
 
 ```bash
-cd 15min_wind/
 python predict_15min_paper.py
 ```
 
