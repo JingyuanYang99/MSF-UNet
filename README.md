@@ -39,29 +39,28 @@ pip install torch numpy h5py xarray pandas matplotlib scipy tensorboard
 
 ## Usage
 
-### 1. Prediction (Inference)
+###  Prediction (Inference)
 
 ```bash
 python predict.py
 ```
 
-The trained model checkpoint is loaded from `checkpoint/unet_best.pth`.
 
-### 2. Per-Level Error Analysis
+###  Per-Level Error Analysis
 
 ```bash
 python analyze_levels.py
 ```
 
-Outputs per-level RMSE, MAE, and Bias at all 37 pressure levels (CSV + figure).
+Outputs per-level RMSE, MAE, and Bias at all 37 pressure levels .
 
-### 3. 15-min Squall-Line Case Study
+### 15-min wind
 
 ```bash
 python predict_15min_paper.py
 ```
 
-Generates AGRI BT + retrieved 850 hPa wind composite figures for the April 12, 2025 squall-line case over Guangdong, China.
+Generates AGRI BT + retrieved 850 hPa wind composite figures for the squall-line case over Guangdong, China.
 
 
 ## License

@@ -12,9 +12,9 @@ input_dim_GIIRS = 1690
 output_dim = 37
 
 ckpt_path = "../unet_model/checkpoint/unet_best.pth"
-data_dir = "/home/ub/yjy/3D wind field/fusion_3D_wind_uv/15min_wind/data"
-save_dir = "/home/ub/yjy/3D wind field/fusion_3D_wind_uv/15min_wind/15min_save_path"
-img_dir = "/home/ub/yjy/3D wind field/fusion_3D_wind_uv/15min_wind/fig/all_data_images_uv"
+data_dir = "/3D wind field/fusion_3D_wind_uv/15min_wind/data"
+save_dir = "/3D wind field/fusion_3D_wind_uv/15min_wind/15min_save_path"
+img_dir = "/3D wind field/fusion_3D_wind_uv/15min_wind/fig/all_data_images_uv"
 norm_param_path = "../data/auxiliary_data/normalized_parameters_mean_std_uvw.npz"
 
 AGRI_mask = np.load("../data/auxiliary_data/AGRI_mask.npy")

@@ -1,27 +1,10 @@
-"""
-37层垂直误差剖面分析
-对 baseline 模型（AGRI+GIIRS+time diff）在测试集上输出每层的 RMSE/MAE/Bias
 
-使用方法:
-  1. 确保 GPU 空闲 (nvidia-smi 检查, kill 其他进程)
-  2. cd /home/ub/hermes_space/fusion_3D_wind_uv/analyze_code
-  3. /home/ub/miniconda3/envs/torch/bin/python -u analyze_levels.py
-
-输出:
-  - CSV: /home/ub/hermes_space/fusion_3D_wind_uv/unet_model/checkpoint/test_level_metrics_37levels.csv
-  - 图:  /home/ub/hermes_space/fusion_3D_wind_uv/unet_model/fig_level_metrics.png
-  - 终端: 逐层表格 + 汇总
-
-注意:
-  - 1376 个测试样本 × ~2s/个 ≈ 45 分钟
-  - 如果想快测前100个, 把下面循环的 range(total) 改成 range(100)
-"""
 import os, sys, csv, math, time
 import numpy as np
 import torch
 
 # ====== 路径定义 (在此统一修改) ======
-PROJECT_ROOT = "/home/ub/yjy/3D wind field/fusion_3D_wind_uv"
+PROJECT_ROOT = "/3D wind field/fusion_3D_wind_uv"
 UNET_DIR     = os.path.join(PROJECT_ROOT, "unet_model")
 CKPT_PATH    = os.path.join(UNET_DIR, "checkpoint", "unet_best.pth")
 OUT_CSV      = os.path.join(UNET_DIR, "checkpoint", "test_level_metrics_37levels.csv")

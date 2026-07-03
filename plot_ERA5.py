@@ -3,8 +3,8 @@ import xarray as xr
 import numpy as np
 import matplotlib.pyplot as plt
 
-nc_path = "/media/ub/SU710/data/era5/20250901/ERA5_20250901000000_level.nc"
-save_dir = "/media/ub/SU710/data/era5/20250901/plots_37_levels_region"
+nc_path = "/data/era5/20250901/ERA5_20250901000000_level.nc"
+save_dir = "/data/era5/20250901/plots_37_levels_region"
 os.makedirs(save_dir, exist_ok=True)
 
 ds = xr.open_dataset(nc_path)
