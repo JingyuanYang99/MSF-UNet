@@ -89,12 +89,6 @@ python predict_15min_paper.py
 Generates AGRI BT + retrieved 850 hPa wind composite figures for the April 12, 2025 squall-line case over Guangdong, China.
 
 
-## Data Availability
-
-- FY-4B AGRI and GIIRS Level-1 data: [FengYun Satellite Data Service](http://satellite.nsmc.org.cn/) (registration required)
-- ERA5 hourly pressure-level data: [Copernicus CDS](https://doi.org/10.24381/cds.bd0915c6)
-- Dropsonde observations: 2025 South China Sea aircraft dropsonde dataset (Guo et al., 2025)
-
 ## License
 
 This code is provided for research and review purposes. For other uses, please contact the corresponding author.
