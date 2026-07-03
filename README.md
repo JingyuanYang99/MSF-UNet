@@ -88,19 +88,6 @@ python predict_15min_paper.py
 
 Generates AGRI BT + retrieved 850 hPa wind composite figures for the April 12, 2025 squall-line case over Guangdong, China.
 
-## Model Architecture
-
-MSF-UNet is a multi-encoder, dual-decoder U-Net adapted from Ronneberger et al. (2015):
-
-- **Inputs**: AGRI current (15×576×648), AGRI previous (15×576×648), GIIRS (1690×192×216), Δt mask (1×192×216)
-- **AGRI encoder**: Extracts short-term cloud and radiance evolution; spatial resolution downsampled to match GIIRS grid
-- **GIIRS encoder**: Processes vertically sensitive hyperspectral information
-- **Δt encoder**: Represents temporal offset between GIIRS scan and target retrieval time
-- **Bottleneck**: Concatenation of AGRI + GIIRS + Δt features
-- **Decoders**: Two independent branches for u and v wind components, each with skip connections from AGRI and GIIRS encoders
-- **Output**: u (37×192×216) and v (37×192×216)
-
-Training uses MSE(u) + MSE(v) loss with the Adam optimizer (learning rate 5e-5, warmup 100 steps, cosine decay, 30 epochs). Data are split 8:2 for training and testing.
 
 ## Data Availability
 
