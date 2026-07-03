@@ -2,9 +2,8 @@
 
 This repository contains the prediction and visualization code for the paper:
 
-> Yang, J., Xu, N.\*, Li, L., Ran, G., Liu, H., Zhang, Y., Dou, F., Zhai, X., Liu, X., Zhao, K., Li, Z., & Zhang, P. Four-Dimensional Wind Retrieval From FY-4B AGRI and GIIRS Through Joint Deep Learning.
+> Four-Dimensional Wind Retrieval From FY-4B AGRI and GIIRS Through Joint Deep Learning.
 
-**Note:** The model architecture, training, dataset, and data preprocessing code are not included in this public repository to protect core intellectual property. They will be made available to reviewers upon request.
 
 ## Overview
 
